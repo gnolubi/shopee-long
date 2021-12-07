@@ -338,13 +338,17 @@
             <script>
                 var cartList = document.getElementById('cart-list');
                 var header = document.getElementById('header');
-                
+                console.log("🚀 ~ screen", screen)
                 header.onclick = function() {
                     var cartList = document.getElementById('cart-list');
                     if (cartList.style.display === "none") {
                         cartList.style.display = "block";
                     } else {
-                        cartList.style.display = "none";
+                        if(screen.width < 800 && screen.height < 800) {
+                            cartList.style.display = "none";
+                        } else {
+                            cartList.style.display = "";
+                        }
                     }
                 }
             </script>
